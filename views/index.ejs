@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/responsive.css' />
+  </head>
+  <style type="text/css">
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	  display: none !important;
+	}
+	html {
+	  position: relative;
+	  min-height: 100%;
+	}
+
+   hr{
+   	margin-bottom: 0px;
+   	margin-top: 0px;
+   }
+   body{
+   	padding-left: 0px; 
+   	padding-right: 0px;
+   	color: #FFF;
+   	background-color: #000;
+   	margin-bottom: 60px;
+   }
+   .modal-content{
+   	color: #000;
+   }
+   .container-footer{
+   	background-color: #000;
+   }
+   input{
+   	width: 100%;
+   	color: #000;
+   }
+   .footer {
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+	  /* Set the fixed height of the footer here */
+	  height: 60px;
+	  background-color: #000;
+	}
+	.btn{
+		background-color: #55ACEE;
+		color: #FFF;
+		border-color: #55ACEE;
+	}
+	a{
+		color: #55ACEE;
+	}
+	.btn:hover {
+	    background-color: #fff;
+		color: #55ACEE;
+		border-color: #fff;
+	}
+  </style>
+  <body ng-app="myApp" ng-controller="myAppController" ng-cloak>
+  	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+	      <div class="navbar-header">
+	      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+	        <a class="navbar-brand" href="#">
+		       <img alt="..." src="/images/gorilla_views.png">
+		    </a>
+	      </div>
+	      <div id="navbar" class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav">
+	        	<li>
+	        		<a href="#">
+	        			<img alt="..." src="/images/twitter_icon_white.png">
+	        		</a>
+	        	</li>
+	          	<li>
+	        		<a href="/">
+	        			<img alt="..." src="/images/news_icon_grey.png">
+	        		</a>
+	        	</li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+	 
+  	<br>
+  	<div class="container">
+  		<br>
+    <button class="btn btn-default btn-block" data-toggle="modal" data-target="#tweetModal"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Tweet</button>
+
+	  	<div class="col-md-12 col-sm-12 col-xs-12" ng-hide="gettingTweets">
+	  		<br>
+		  	<div ng-repeat="tweet in tweets | orderBy:'-created_at' track by tweet.id">
+	  			<div class="col-xs-12">
+	  				<hr>
+	  				<div class="col-xs-1">
+	  					<img alt="..." src="/images/blue_bullet.png">
+	  				</div>
+	  				<div class="col-xs-10">
+	  					<a>{{tweet.user.name}}</a>
+		  				<!--p>{{tweet.text}}</p-->
+		  				<p ng-bind-html="renderHtml(tweet.text)"></p>
+	  				</div>
+	  				
+	  			</div>
+		  		<!--{{tweet.entities.urls[0].expanded_url}}-->
+		  	</div>
+	  	</div>
+  	<div class="col-md-12" ng-show="gettingTweets">
+  		loading...
+  	</div>
+
+  	<div id="tweetModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    <h2 class="modal-title">Tweet</h2>
+                </div>     
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="col-md-12">              
+                            <label class="col-md-10 control-label text-right">Posting as</label>
+                          <div class="col-md-10">
+                              <input type="text" class="form-control input-lg" id="postingAs" name="postingAs" ng-model="postingAs" ng-init="postingAs" required><br>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">              
+                            <label class="col-md-10 control-label text-right">Tweet</label>
+                          <div class="col-md-10">
+                              <textarea id="tweet" name="tweet" type="text" class="form-control input-lg" required ng-model="newTweet"></textarea>
+                          </div>
+                        </div>
+                    </div>
+                    &nbsp;
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-go" data-dismiss="modal" ng-click="addTweet()">Tweet</button>
+                    <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="/javascripts/angular.js"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+  <script type="text/javascript" src="/javascripts/angular-sanitize.js"></script>
+
+  <script type="text/javascript">
+
+	var app = angular.module('myApp',['ngSanitize']);
+
+	app.controller('myAppController',function($scope,$http,$interval,$sce){
+
+		$scope.tweets = [];
+
+		$scope.currentDate = new Date();
+
+		$scope.showReply = false;
+
+		$scope.gettingTweets = true;
+
+		$scope.remainingChars = 140;
+
+		$scope.renderHtml = function(html_code)
+		{
+		    return $sce.trustAsHtml(html_code);
+		};
+
+		$scope.getTweets = function(){
+			$http.get('/twitter/timeline').
+			success(function(data){
+				$scope.gettingTweets = false;
+				//$scope.tweets = data;
+				var tempTweets = data;
+				$http.get('/user/tweets').
+					success(function(data){
+						for (var i = 0; i < data.length; i++) {
+							tempTweets.push(data[i]);
+						};
+						$scope.tweets = tempTweets;
+					}).
+					error(function(){
+						$scope.gettingTweets = false;
+						console.log('error getting user tweets no')
+					});
+			}).
+			error(function(){
+				$scope.gettingTweets = false;
+				console.log("error getting tweets from twitter");
+			});
+		}
+
+		$scope.getTweets();
+
+		$interval(function(){$scope.getTweets()}, 7000);
+
+		$scope.addTweet = function(){
+
+			if($scope.remainingChars >= 0){
+
+				var date = new Date().toString();
+				var split = date.split(":");
+				var secondSplit = split[2].split(' ');
+				var dateString = split[0].replace(' 2015 ',' ') + ":" + split[1] + ":" + secondSplit[0] + " +0000 2015";
+
+				var d = new Date();
+				var n = d.getTime();
+
+				var userTweet = {id:n,user:{name:$scope.postingAs},text:$scope.newTweet,created_at:dateString};
+				$scope.tweets.push(userTweet);
+				$scope.newTweet = "";
+				$scope.remainingChars = 140;
+				$http.post('/add/usertweet',{tweet:userTweet}).
+					success(function(){
+						console.log("done adding tweet");
+					}).
+					error(function(){
+						console.log("error adding tweet");
+					});
+				}
+		};
+
+		$scope.checkCharacters = function(){
+			$scope.remainingChars = 140 - $scope.newTweet.length;
+			if($scope.newTweet.length >= 140){
+				$scope.newTweet = $scope.newTweet.substring(0, $scope.newTweet.length - 1);
+			}
+		}
+
+	});
+  
+  </script>
+</html>

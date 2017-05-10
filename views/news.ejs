@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  </head>
+  <style type="text/css">
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	  display: none !important;
+	}
+   hr{
+   	margin-bottom: 0px;
+   	margin-top: 0px;
+   }
+   body{
+   	padding-left: 0px; 
+   	padding-right: 0px;
+   	color: #FFF;
+   	background-color: #000;
+   	height: 100%;
+   }
+   input{
+   	width: 100%;
+   	color: #000;
+   }
+
+iframe {
+	margin-bottom: 10px;
+    height: 680px;
+    width: 100%;
+}
+
+  </style>
+  <body ng-app="myApp" ng-controller="myAppController" ngCloak>
+  	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+	      <div class="navbar-header">
+	      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+	        <a class="navbar-brand" href="#">
+		       <img alt="..." src="/images/gorilla_news.png">
+		    </a>
+	      </div>
+	      <div id="navbar" class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav">
+	        	<li>
+	        		<a href="/tweets">
+	        			<img alt="..." src="/images/twitter_icon_grey.png">
+	        		</a>
+	        	</li>
+	          	<li>
+	        		<a href="#">
+	        			<img alt="..." src="/images/news_icon_white.png">
+	        		</a>
+	        	</li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+	 
+  	<br>
+  	<div class="container">
+
+  		 <iframe src="http://www.london24.com/home"></iframe> 
+
+  	</div>
+
+  </body>
+  <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="/javascripts/angular.js"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+  <script src="/javascripts/moment.js"></script>
+  <script src="/javascripts/angular-moment.js"></script>
+
+  <script type="text/javascript">
+
+	var app = angular.module('myApp',['angularMoment']);
+
+	app.controller('myAppController',function($scope,$http,$interval){
+
+
+	});
+  
+  </script>
+</html>

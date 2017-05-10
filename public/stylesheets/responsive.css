@@ -1,0 +1,388 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+/* Launchpad24 App Landing Page Responsive Stylesheet
+====================================================== */
+
+
+@media (max-width: 1024px) {
+.intro,  .newsletter,  .video {
+	background-attachment: scroll;
+}
+a.mouse {
+	display: none;
+}
+.intro .intro-slider .container {
+	text-align: center;
+	padding-top: 50px;
+}
+.intro .intro-slider .container .paddingtop {
+	margin-top: 0%;
+	background: rgba(0,0,0,0.4);
+}
+.intro .intro-slider .container figure img {
+	max-height: 400px;
+}
+.intro .intro-slider .introbox {
+	padding: 10px;
+}
+.introbox h1, .taglinesmall {
+}
+#reviews {
+	min-height:300px}
+}
+
+@media only screen and (min-width: 1024px) {
+.intro .owl-controls {
+	bottom: 100px;
+}
+.socap {
+	margin-top:30px;	
+	margin-bottom:0;
+}
+}
+
+@media (max-width: 991px) {
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 30px;
+}
+/* Intro Slider */
+.intro .intro-slider .container {
+	padding: 30px 0 120px 0px;
+}
+.intro .intro-slider, .intro .intro-slider .item {
+}
+.intro .intro-slider .logo {
+	padding-bottom: 30px;
+}
+.intro .intro-slider .btn.btn-custom {
+}
+.intro .intro-slider .btn.btn-custom,  .intro .intro-slider .btn-custom-border {
+	min-width: 206px;
+}
+/* Navigation */
+.navbar .nav>li>a {
+	padding: 30px 10px;
+}
+.navbar-default .navbar-nav>li>a {
+	font-size: 12px;
+}
+.nav-tabs>li>a {
+	width: 209px;
+}
+/* Intro Section */
+.intro .intro-section {
+	padding: 0 0;
+}
+/* Features Section */
+
+.features .feature h4 {
+	margin-bottom: 5px;
+}
+.features .features-left,  .features .features-right {
+	margin: 0px;
+	text-align: center;
+}
+.features .features-left .icon-container,  .features .features-right .icon-container {
+	float: none;
+	margin: 0px 0 20px 0;
+	min-height: 100px;
+}
+.features .features-left .icon-container .icon,  .features .features-right .icon-container .icon {
+	margin: 0 auto;
+}
+.features .image-features {
+	margin-bottom: 30px;
+}
+/* Review Section */
+.client-image,  .client-name {
+	float: none;
+}
+.client-data {
+	border: none;
+}
+.client-image img {
+	margin: 0 auto;
+	display: block;
+}
+.client-name {
+	text-align: center;
+	padding: 0;
+	margin-top: 10px;
+}
+.client-quote {
+	padding: 10px 0 0 0;
+	text-align: center;
+}
+/* Service Section */
+.service {
+	margin-bottom: 30px;
+}
+.service:hover {
+	margin-top: 0px;
+}
+/* Screenshots Section */
+.screen img {
+	display: block;
+	width: 98%;
+	height: auto
+}
+.screens .owl-next {
+	right: -24px;
+}
+/* Brief Section */
+.brief-content {
+	max-width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.packages .package {
+	margin-bottom: 20px;
+}
+.packages .package.featured {
+	padding: 30px 0;
+}
+/* works Section */
+ul.extra-features {
+	max-width: 100%;
+}
+.list-inline {
+	margin-left: 0px;
+}
+.tabs {
+	margin-top: 0px;
+}
+.tab-pane figure {
+	margin-bottom: 20px;
+}
+/* Video Section */
+.video-item {
+	margin-bottom: 30px;
+}
+#sync2 {
+	text-align:center;	
+	margin:0 0 0 0;
+}
+#sync2 .item{
+	margin-bottom: 10px;
+}
+.socap {
+	margin-top:0px;	
+		margin-bottom:0;
+
+}
+#reviews {
+	min-height:460px}
+}
+
+@media (max-width: 767px) {
+h1 {
+	font-size: 30px;
+}
+h2 {
+	font-size: 25px;
+}
+#reviews {
+	min-height:530px}
+/* Navigation Styles */
+.navbar .nav>li>a {
+	padding: 10px 20px;
+	font-size: 14px;
+}
+.nav.navbar-nav.pull-right {
+	float: left!important;
+}
+.navbar-header {
+	height: 80px;
+}
+.navbar-toggle {
+	font-weight: 600;
+	margin-top: 18px;
+	color: #fff;
+}
+.navbar-default .navbar-toggle,  .navbar-default .navbar-toggle:hover,  .navbar-default .navbar-toggle:focus {
+	color: #fff;
+}
+.nav-tabs {
+	display: block;
+}
+.nav-tabs>li {
+	float: none;
+	width: 100%;
+	display: block;
+}
+.nav-tabs>li>a {
+	width: 100%;
+}
+.nav-tabs>li:first-child>a {
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 0px;
+}
+.nav-tabs>li:last-child>a {
+	border-bottom-left-radius: 4px;
+	border-top-right-radius: 0px;
+}
+/* Newsletter Section */
+.newsletter input {
+	width: 100%;
+}
+.newsletter .btn-send {
+	display: block;
+	margin: 10px auto;
+	width: 100%;
+}
+/* Download Section */
+.download .list-inline>li {
+	display: block;
+	margin-bottom: 10px;
+}
+/* Footer Section */
+.footer {
+
+}
+
+
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size:15px;
+	}
+h1 {
+	font-size: 1.4em;
+	padding-bottom:10px;
+}
+h3 {
+	font-size: 1.1em;
+	padding-bottom:10px;
+}
+h2 {
+	font-size: 1.1em;
+		padding-bottom:20px;
+}
+h4 {
+	font-size: 1em;
+		padding-bottom:10px;
+		padding-top:10px;
+
+} 
+.logo {
+	margin-top:10px;
+}
+p {
+margin:10px 0px;
+}
+.navbar {
+	min-height:50px;
+}
+.navbar-header {
+	height:50px;
+}
+.navbar-toggle {
+	margin-top:5px;
+}
+.taglinesmall {
+	font-size: 1em;
+}
+section {
+	padding:70px 0;
+}
+.section-head {
+	margin-bottom:20px;
+}
+.navbar-default .navbar-brand {
+	width: 50%;
+}
+/* Intro Section */
+.intro .intro-slider .container {
+	text-align: center;
+	padding: 10px 10px;
+}
+.intro .intro-slider .container h1 {
+	font-size: 20px;
+}
+.intro .intro-slider .btn-custom,  .intro .intro-section .btn-custom,  .intro .intro-slider .btn-custom-border,  .intro .intro-section .btn-custom-border {
+	margin-bottom: 10px!important;
+}
+#intro {
+   
+    padding: 50px 0px 50px 0px;
+    }
+/* Features Section */
+.features figure img {
+	width: 100%;
+}
+/* Newsletter Section */
+.newsletter input {
+	width: 100%;
+}
+.newsletter .btn-send {
+	width: 100%;
+	margin: 10px auto;
+	display: block;
+}
+/* Screenshot Section */
+.screen img {
+	width: 100%;
+}
+.screens .owl-next {
+	right: 0px;
+	z-index: 100;
+}
+.screens .owl-prev {
+	left: 0px;
+	z-index: 100;
+}
+/* Brief Section */
+.small-slider {
+	margin-top: 30px;
+}
+.brief figure img {
+	max-height: 375px;
+}
+.nav-tabs {
+	display: block;
+}
+.nav-tabs>li {
+	float: none;
+	width: 100%;
+	display: block;
+}
+.nav-tabs>li>a {
+	width: 100%;
+}
+.nav-tabs>li:first-child>a {
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 0px;
+}
+.nav-tabs>li:last-child>a {
+	border-bottom-left-radius: 4px;
+	border-top-right-radius: 0px;
+}
+.tab-content figure img {
+	width: 100%;
+	z-index: 0;
+}
+/* Download Section */
+.download .list-inline {
+	text-align: center;
+}
+.download .btn {
+	margin-bottom: 10px;
+}
+#sync2 .item h2{
+  font-size: 25px;
+}
+#sync2 .item h3{
+  font-size: 16px;
+}
+#reviews {
+	min-height:580px}
+}
+.btn {
+	font-size:1em;
+}
